@@ -15,10 +15,7 @@ export default function page() {
         'Comunidade Ativa e Popularidade.'
     ]
 
-    const [likes, setLikes] = useState(() => {
-        const likesLocalStorage = localStorage.getItem('likes') || 0
-        return Number(likesLocalStorage)
-    })
+    const [likes, setLikes] = useState(0)
 
     useEffect(() => {
         console.log("Numero de likes: ", likes)
@@ -27,6 +24,10 @@ export default function page() {
 
     useEffect(()=> {
         console.log("DOM loaded")
+
+        const likesLocalStorage = localStorage.getItem('likes') || 0
+        localStorage.setItem('likes', String(likesLocalStorage))
+
     }, [])
 
 
