@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 
-export default function page() {
+export default function CaracteristicasPage() {
 
     const caracteristicas = [
         'JSX, sintaxe que mistura HTML e JS.',
