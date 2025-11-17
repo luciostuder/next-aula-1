@@ -15,21 +15,17 @@ export default function page() {
         'Comunidade Ativa e Popularidade.'
     ]
 
-    const [likes, setLikes] = useState(0)
+    const [likes, setLikes] = useState<number>(() => {
+        if (typeof window !== "undefined") {
+            return Number(localStorage.getItem("likes")) || 0;
+        }
+        return 0;
+    });
 
     useEffect(() => {
         console.log("Numero de likes: ", likes)
         localStorage.setItem('likes', String(likes))
     }, [likes])
-
-    useEffect(()=> {
-        console.log("DOM loaded")
-
-        const likesLocalStorage = localStorage.getItem('likes') || 0
-        localStorage.setItem('likes', String(likesLocalStorage))
-
-    }, [])
-
 
     return (
         <div>
@@ -39,12 +35,11 @@ export default function page() {
                     return <li key={i}>{caracteristica}</li>
                 })}
             </ul>
-            <section className="mt-8">
-                Likes: <button onClick={() => setLikes(likes+1)}>
+            {likes != null && (<section className="mt-8">
+                Likes: <button onClick={() => setLikes(likes + 1)}>
                     {likes} ❤️
                 </button>
-
-            </section>
+            </section>)}
         </div>
     )
 }
