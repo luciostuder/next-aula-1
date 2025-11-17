@@ -1,10 +1,19 @@
 'use client'
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
-import {caracteristicas} from '@/data/caracteristicas'
 
 export default function CaracteristicasPage() {
+
+    const caracteristicas = [
+        'JSX, sintaxe que mistura HTML e JS.',
+        'Componentes, funções que retornam JSX.',
+        'Componentes Reutilizáveis e Modulares.',
+        'Roteamento Automático e APIs.',
+        'Hooks: useState, useEffect e useSWR.',
+        'Renderização Rápida e SEO Friendly.',
+        'TypeScript Seguro e Escalável.',
+        'Comunidade Ativa e Popularidade.'
+    ]
 
     const [likes, setLikes] = useState<number>(() => {
         if (typeof window !== "undefined") {
@@ -20,28 +29,17 @@ export default function CaracteristicasPage() {
 
     return (
         <div>
-
             <h2>Características</h2>
-
             <ul>
                 {caracteristicas.map((caracteristica, i) => {
-                    return (
-                        <li key={i}>
-                            {caracteristica}
-                            <Link href={`/caracteristicas/${i}`}>
-                                🔗    
-                            </Link>
-                        </li>
-                    )
+                    return <li key={i}>{caracteristica}</li>
                 })}
             </ul>
-
             {likes != null && (<section className="mt-8">
                 Likes: <button onClick={() => setLikes(likes + 1)}>
                     {likes} ❤️
                 </button>
             </section>)}
-
         </div>
     )
 }

@@ -36,7 +36,8 @@ export default function RootLayout({ children,}: Readonly<{children: React.React
           `} 
       >
         <Header />
-        <main className="bg-blue-200 p-5 rounded-2xl max-w-4xl min-h-[70vh]">
+        <main className="bg-blue-200 p-5 rounded-2xl min-h-[70vh] 
+                          sm:w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
           {children}
         </main>
         <footer>DIW, {data.getFullYear()}</footer>

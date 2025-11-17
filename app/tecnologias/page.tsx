@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import {caracteristicas} from '@/data/caracteristicas'
+import {tecnologias} from '@/data/tecnologias'
 
-export default function CaracteristicasPage() {
+export default function TecnologiasPage() {
 
     const [likes, setLikes] = useState<number>(() => {
         if (typeof window !== "undefined") {
@@ -24,11 +24,11 @@ export default function CaracteristicasPage() {
             <h2>Características</h2>
 
             <ul>
-                {caracteristicas.map((caracteristica, i) => {
+                {tecnologias.map((tecnologia, i) => {
                     return (
                         <li key={i}>
-                            {caracteristica}
-                            <Link href={`/caracteristicas/${i}`}>
+                            {tecnologia.titulo}
+                            <Link href={`/tecnologias/${i}`}>
                                 🔗    
                             </Link>
                         </li>
