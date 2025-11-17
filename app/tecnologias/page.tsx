@@ -21,7 +21,7 @@ export default function TecnologiasPage() {
     return (
         <div>
 
-            <h2>Características</h2>
+            <h2>Tecnologias</h2>
 
             <ul>
                 {tecnologias.map((tecnologia, i) => {
