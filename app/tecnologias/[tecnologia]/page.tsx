@@ -12,7 +12,7 @@ export default function CaracteristicaPage() {
         <>
             <h2>{tecnologias[id].titulo}</h2>
             <p>{tecnologias[id].descricao}</p>
-            <Link className="mt-8 bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" href="/tecnologias">Voltar {'>'}</Link>
+            <Link className="mt-4 bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" href="/tecnologias">Voltar {'>'}</Link>
         </>
     )
 }

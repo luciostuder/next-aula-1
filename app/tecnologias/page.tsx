@@ -24,11 +24,11 @@ export default function TecnologiasPage() {
             <h2>Tecnologias</h2>
 
             <ul>
-                {tecnologias.map((tecnologia, i) => {
+                {tecnologias.map((tecnologia, index) => {
                     return (
-                        <li key={i}>
+                        <li key={index}>
                             {tecnologia.titulo}
-                            <Link href={`/tecnologias/${i}`}>
+                            <Link href={`/tecnologias/${index}`}>
                                 🔗    
                             </Link>
                         </li>
